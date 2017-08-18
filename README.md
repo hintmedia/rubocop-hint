@@ -37,9 +37,13 @@ AllCops:
 
 If there are project specific styles you can override the Hint gem by adding them to `.rubocop.yml`
 
+Rubocop's inheritance trail is:
+
+`inherit_gem` -> `inherit_from` -> `.rubocop.yml`
+
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/hintmedia/hint-rubocop_style.
+Pull requests are welcome on GitHub at https://github.com/hintmedia/hint-rubocop_style.
 
 
 ## License
