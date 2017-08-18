@@ -1,7 +1,7 @@
-require "hint/rubocop_style/version"
+require 'hint/rubocop_style/version'
 
 module Hint
-  module RubocopStyle
+  module RubocopStyle #:nodoc:
     # Your code goes here...
   end
 end
