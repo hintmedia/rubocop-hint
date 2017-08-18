@@ -119,3 +119,6 @@ RSpec/LetSetup:
 
 Security/YAMLLoad:
   Enabled: false
+
+Naming/FileName:
+  Enabled: false
