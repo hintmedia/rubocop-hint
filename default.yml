@@ -1,0 +1,121 @@
+# adding Rubocop to a project run rubocop --auto-gen-config then uncomment line below
+# inherit_from: .rubocop_todo.yml
+require: rubocop-rspec
+
+AllCops:
+  DisplayCopNames: true
+  Include:
+    - '**/Rakefile'
+    - '**/config.ru'
+  Exclude:
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'Gemfile*'
+    - 'script/**/*'
+    - 'test/**/*'
+    - 'vendor/**/*'
+
+Rails:
+  Enabled: true
+
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: when_needed
+  SupportedStyles:
+    # `when_needed` will add the frozen string literal comment to files
+    # only when the `TargetRubyVersion` is set to 2.3+.
+    - when_needed
+
+Style/PercentLiteralDelimiters:
+# Specify the default preferred delimiter for all types with the 'default' key
+# Override individual delimiters (even with default specified) by specifying
+# an individual key
+  PreferredDelimiters:
+    default: ()
+    '%i': '()'
+    '%I': '()'
+    '%r': '()'
+    '%w': '()'
+    '%W': '()'
+
+# Allow empty lines around class body
+Layout/EmptyLinesAroundClassBody:
+  Enabled: false
+
+Layout/MultilineMethodCallIndentation:
+  Enabled: false
+
+# Allow empty lines around module body
+Layout/EmptyLinesAroundModuleBody:
+  Enabled: false
+
+# Allow empty lines around block body
+Layout/EmptyLinesAroundBlockBody:
+  Enabled: false
+
+# Limit line length
+Metrics/LineLength:
+  Max: 100
+
+Metrics/ModuleLength:
+  Max: 200
+
+Layout/CaseIndentation:
+  Enabled: true
+  EnforcedStyle: case
+  IndentOneStep: true
+
+Style/AndOr:
+  Enabled: false
+
+Style/SignalException:
+  Enabled: false
+  AutoCorrect: false
+
+Layout/SpaceBeforeBlockBraces:
+  AutoCorrect: true
+
+Layout/ExtraSpacing:
+  AutoCorrect: true
+
+Layout/EmptyLines:
+  AutoCorrect: true
+
+Layout/MultilineOperationIndentation:
+   Enabled: true
+   EnforcedStyle: indented
+
+Performance/Count:
+   Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/RedundantFreeze:
+  Enabled: false
+
+Layout/SpaceAroundOperators:
+  Enabled: false
+
+Layout/ExtraSpacing:
+  AllowForAlignment: true
+    # When true, forces the alignment of = in assignments on consecutive lines.
+  ForceEqualSignAlignment: false
+
+RSpec/ExampleLength:
+  Max: 19
+
+RSpec/MultipleExpectations:
+  Max: 10
+
+RSpec/NamedSubject:
+  Enabled: false
+
+RSpec/MessageExpectation:
+  Enabled: false
+
+RSpec/LetSetup:
+  Enabled: false
+
+Security/YAMLLoad:
+  Enabled: false
