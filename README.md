@@ -33,6 +33,18 @@ inherit_gem:
 AllCops:
   TargetRubyVersion: PROJECT_RUBY_VERSION
   TargetRailsVersion: PROJECT_RAILS_VERSION
+  DisplayCopNames: true
+  Include:
+    - '**/Rakefile'
+    - '**/config.ru'
+  Exclude:
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'Gemfile*'
+    - 'script/**/*'
+    - 'test/**/*'
+    - 'vendor/**/*'
 ```
 
 If there are project specific styles you can override the Hint gem by adding them to `.rubocop.yml`
