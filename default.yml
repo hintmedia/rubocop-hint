@@ -2,20 +2,6 @@
 # inherit_from: .rubocop_todo.yml
 require: rubocop-rspec
 
-AllCops:
-  DisplayCopNames: true
-  Include:
-    - '**/Rakefile'
-    - '**/config.ru'
-  Exclude:
-    - 'bin/**/*'
-    - 'config/**/*'
-    - 'db/**/*'
-    - 'Gemfile*'
-    - 'script/**/*'
-    - 'test/**/*'
-    - 'vendor/**/*'
-
 Rails:
   Enabled: true
 
@@ -120,5 +106,5 @@ RSpec/LetSetup:
 Security/YAMLLoad:
   Enabled: false
 
-Naming/FileName:
+Style/FileName:
   Enabled: false
