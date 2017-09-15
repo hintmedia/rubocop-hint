@@ -106,7 +106,7 @@ RSpec/LetSetup:
 Security/YAMLLoad:
   Enabled: false
 
-Style/FileName:
+Naming/FileName:
   Enabled: false
 
 Style/Documentation:
