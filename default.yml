@@ -63,6 +63,9 @@ Layout/SpaceBeforeBlockBraces:
 
 Layout/ExtraSpacing:
   AutoCorrect: true
+  AllowForAlignment: true
+    # When true, forces the alignment of = in assignments on consecutive lines.
+  ForceEqualSignAlignment: false
 
 Layout/EmptyLines:
   AutoCorrect: true
@@ -82,11 +85,6 @@ Style/RedundantFreeze:
 
 Layout/SpaceAroundOperators:
   Enabled: false
-
-Layout/ExtraSpacing:
-  AllowForAlignment: true
-    # When true, forces the alignment of = in assignments on consecutive lines.
-  ForceEqualSignAlignment: false
 
 RSpec/ExampleLength:
   Max: 19
