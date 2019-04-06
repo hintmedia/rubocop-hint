@@ -24,6 +24,11 @@ Style/PercentLiteralDelimiters:
     '%w': '()'
     '%W': '()'
 
+# Align hash values
+Layout/AlignHash:
+  EnforcedColonStyle: table
+  EnforcedHashRocketStyle: table
+
 # Allow empty lines around class body
 Layout/EmptyLinesAroundClassBody:
   Enabled: false
