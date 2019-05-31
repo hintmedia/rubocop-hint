@@ -34,9 +34,6 @@ AllCops:
   TargetRubyVersion: PROJECT_RUBY_VERSION
   TargetRailsVersion: PROJECT_RAILS_VERSION
   DisplayCopNames: true
-  Include:
-    - '**/Rakefile'
-    - '**/config.ru'
   Exclude:
     - 'bin/**/*'
     - 'config/**/*'
