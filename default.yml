@@ -7,13 +7,6 @@ require: rubocop-performance
 Rails:
   Enabled: true
 
-Style/FrozenStringLiteralComment:
-  EnforcedStyle: when_needed
-  SupportedStyles:
-    # `when_needed` will add the frozen string literal comment to files
-    # only when the `TargetRubyVersion` is set to 2.3+.
-    - when_needed
-
 Style/PercentLiteralDelimiters:
 # Specify the default preferred delimiter for all types with the 'default' key
 # Override individual delimiters (even with default specified) by specifying
