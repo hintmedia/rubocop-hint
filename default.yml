@@ -101,6 +101,9 @@ RSpec/MessageExpectation:
 
 RSpec/LetSetup:
   Enabled: false
+  
+RSpec/NestedGroups:
+  Enabled: false
 
 Security/YAMLLoad:
   Enabled: false
