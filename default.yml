@@ -1,6 +1,6 @@
 # adding Rubocop to a project run rubocop --auto-gen-config then uncomment line below
 # inherit_from: .rubocop_todo.yml
-require: 
+require:
   - rubocop-rspec
   - rubocop-rails
   - rubocop-performance
@@ -21,7 +21,7 @@ Style/PercentLiteralDelimiters:
     '%W': '()'
 
 # Align hash values
-Layout/AlignHash:
+Layout/HashAlignment:
   EnforcedColonStyle: table
   EnforcedHashRocketStyle: table
 
@@ -101,7 +101,7 @@ RSpec/MessageExpectation:
 
 RSpec/LetSetup:
   Enabled: false
-  
+
 RSpec/NestedGroups:
   Enabled: false
 
