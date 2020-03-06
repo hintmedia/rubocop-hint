@@ -57,7 +57,7 @@ Metrics/ClassLength:
   Max: 200
 
 Metrics/MethodLength:
-  Max: 20
+  Max: 15
 
 Metrics/AbcSize:
   Max: 30
@@ -127,9 +127,6 @@ RSpec/ImplicitBlockExpectation:
   Enabled: false
 
 RSpec/MessageChain:
-  Enabled: false
-
-RSpec/EmptyExampleGroup:
   Enabled: false
 
 RSpec/MessageSpies:
