@@ -1,4 +1,4 @@
-# Hint::RubocopStyle
+# Rubocop Hint Styles
 
 Shared Hint Rubocop style config
 
@@ -8,10 +8,10 @@ Add this line to your application's Gemfile:
 
 ```ruby
 group :development, :test do
-  gem 'hint-rubocop_style'
+  gem 'rubocop-hint'
 end
 ```
-_This gem includes Rubocop and RubocopRspec as dependencies._
+_This gem includes Rubocop, RubocopRspec, RubocopRails, and RubocopPerformance as dependencies._
 
 And then execute:
 
@@ -19,7 +19,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install hint-rubocop_style
+    $ gem install rubocop-hint
 
 ## Usage
 
@@ -27,7 +27,7 @@ Either create or update the `.rubocop.yml` with the following:
 
 ```yaml
 inherit_gem:
-  hint-rubocop_style:
+  rubocop-hint:
     - default.yml
 
 AllCops:
