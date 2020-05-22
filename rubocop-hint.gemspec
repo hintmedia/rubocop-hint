@@ -3,13 +3,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'hint/rubocop_style/version'
 
 Gem::Specification.new do |spec|
-  spec.name                  = 'hint-rubocop_style'
+  spec.name                  = 'rubocop-hint'
   spec.version               = Hint::RubocopStyle::VERSION
   spec.required_ruby_version = '>= 2.3.0'
   spec.authors               = ['Hint']
   spec.email                 = ['tech@hint.io']
 
-  spec.summary               = 'Hint shared Rubocop style guide'
+  spec.summary               = "Hint's shared Rubocop style guide"
   spec.homepage              = 'https://github.com/hintmedia/hint-rubocop_style'
   spec.license               = 'MIT'
 
