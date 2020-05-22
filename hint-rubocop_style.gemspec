@@ -13,6 +13,10 @@ Gem::Specification.new do |spec|
   spec.homepage              = 'https://github.com/hintmedia/hint-rubocop_style'
   spec.license               = 'MIT'
 
+  spec.post_install_message = "The hint-rubocop_style gem has been deprecated and has "\
+                              "been replaced by rubocop-hint. Please switch to "\
+                              "rubocop-hint as soon as possible."
+
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
