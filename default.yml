@@ -4,7 +4,7 @@ require:
   - rubocop-rspec
   - rubocop-rails
   - rubocop-performance
-  - standard/cop/semantic_blocks
+  - standard/cop/block_single_line_braces
 
 inherit_mode:
   merge:
