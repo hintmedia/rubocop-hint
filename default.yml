@@ -4,112 +4,17 @@ require:
   - rubocop-rspec
   - rubocop-rails
   - rubocop-performance
+  - standard/cop/semantic_blocks
 
-Rails:
-  Enabled: true
+inherit_mode:
+  merge:
+    - Exclude
+    - Include
 
-Rails/HasAndBelongsToMany:
-  Enabled: false
+inherit_gem:
+  standard: config/base.yml
 
-Rails/SkipsModelValidations:
-  Enabled: false
-
-Style/PercentLiteralDelimiters:
-# Specify the default preferred delimiter for all types with the 'default' key
-# Override individual delimiters (even with default specified) by specifying
-# an individual key
-  PreferredDelimiters:
-    default: ()
-    '%i': '()'
-    '%I': '()'
-    '%r': '()'
-    '%w': '()'
-    '%W': '()'
-
-# Align hash values
-Layout/HashAlignment:
-  EnforcedColonStyle: table
-  EnforcedHashRocketStyle: table
-
-# Allow empty lines around class body
-Layout/EmptyLinesAroundClassBody:
-  Enabled: false
-
-Layout/MultilineMethodCallIndentation:
-  Enabled: false
-
-# Allow empty lines around module body
-Layout/EmptyLinesAroundModuleBody:
-  Enabled: false
-
-# Allow empty lines around block body
-Layout/EmptyLinesAroundBlockBody:
-  Enabled: false
-
-# Limit line length
-Layout/LineLength:
-  Max: 100
-
-Metrics/BlockLength:
-  Exclude:
-    - 'Rakefile'
-    - '**/*.rake'
-    - 'spec/**/*.rb'
-
-Metrics/ModuleLength:
-  Max: 200
-
-Metrics/ClassLength:
-  Max: 200
-
-Metrics/MethodLength:
-  Max: 15
-
-Metrics/AbcSize:
-  Max: 30
-
-Layout/CaseIndentation:
-  Enabled: true
-  EnforcedStyle: case
-  IndentOneStep: true
-
-Style/AndOr:
-  Enabled: false
-
-Style/SignalException:
-  Enabled: false
-  AutoCorrect: false
-
-Style/GlobalVars:
-  Enabled: false
-
-Layout/SpaceBeforeBlockBraces:
-  AutoCorrect: true
-
-Layout/ExtraSpacing:
-  AutoCorrect: true
-  AllowForAlignment: true
-    # When true, forces the alignment of = in assignments on consecutive lines.
-  ForceEqualSignAlignment: false
-
-Layout/EmptyLines:
-  AutoCorrect: true
-
-Layout/MultilineOperationIndentation:
-   Enabled: true
-   EnforcedStyle: indented
-
-Performance/Count:
-   Enabled: false
-
-Style/NumericLiterals:
-  Enabled: false
-
-Style/RedundantFreeze:
-  Enabled: false
-
-Layout/SpaceAroundOperators:
-  Enabled: false
+## RSPEC CONFIG
 
 RSpec/ExampleLength:
   Max: 19
@@ -141,11 +46,199 @@ RSpec/MessageSpies:
 RSpec/AnyInstance:
   Enabled: false
 
-Security/YAMLLoad:
-  Enabled: false
+## RAILS CONFIG
+# Based on removed standard configuration:
+# https://github.com/testdouble/standard/commit/94d133f477a5694084ac974d5ee01e8a66ce777e#diff-65478e10d5b2ef41c7293a110c0e6b7c
 
-Naming/FileName:
-  Enabled: false
+Rails/ActionFilter:
+  Enabled: true
+  EnforcedStyle: action
+  Include:
+    - app/controllers/**/*.rb
 
-Style/Documentation:
-  Enabled: false
+Rails/ActiveRecordAliases:
+  Enabled: true
+
+Rails/ActiveSupportAliases:
+  Enabled: true
+
+Rails/ApplicationJob:
+  Enabled: true
+
+Rails/ApplicationRecord:
+  Enabled: true
+
+Rails/AssertNot:
+  Enabled: true
+  Include:
+    - '**/test/**/*'
+
+Rails/Blank:
+  Enabled: true
+  # Convert usages of `nil? || empty?` to `blank?`
+  NilOrEmpty: true
+  # Convert usages of `!present?` to `blank?`
+  NotPresent: true
+  # Convert usages of `unless present?` to `if blank?`
+  UnlessPresent: true
+
+Rails/BulkChangeTable:
+  Enabled: true
+  Database: null
+  Include:
+    - db/migrate/*.rb
+
+Rails/CreateTableWithTimestamps:
+  Enabled: true
+  Include:
+    - db/migrate/*.rb
+
+Rails/Date:
+  Enabled: true
+  EnforcedStyle: flexible
+
+Rails/Delegate:
+  Enabled: true
+  EnforceForPrefixed: true
+
+Rails/DelegateAllowBlank:
+  Enabled: true
+
+Rails/DynamicFindBy:
+  Enabled: true
+  Whitelist:
+    - find_by_sql
+
+Rails/EnumUniqueness:
+  Enabled: true
+  Include:
+    - app/models/**/*.rb
+
+Rails/EnvironmentComparison:
+  Enabled: true
+
+Rails/Exit:
+  Enabled: true
+  Include:
+    - app/**/*.rb
+    - config/**/*.rb
+    - lib/**/*.rb
+  Exclude:
+    - lib/**/*.rake
+
+Rails/FilePath:
+  Enabled: true
+  EnforcedStyle: arguments
+
+Rails/FindBy:
+  Enabled: true
+  Include:
+    - app/models/**/*.rb
+
+Rails/FindEach:
+  Enabled: true
+  Include:
+    - app/models/**/*.rb
+
+Rails/HasAndBelongsToMany:
+  Enabled: true
+  Include:
+    - app/models/**/*.rb
+
+Rails/HttpPositionalArguments:
+  Enabled: true
+  Include:
+    - 'spec/**/*'
+    - 'test/**/*'
+
+Rails/HttpStatus:
+  Enabled: true
+  EnforcedStyle: symbolic
+
+Rails/InverseOf:
+  Enabled: true
+  Include:
+    - app/models/**/*.rb
+
+Rails/LexicallyScopedActionFilter:
+  Enabled: true
+  Safe: false
+  Include:
+    - app/controllers/**/*.rb
+
+Rails/NotNullColumn:
+  Enabled: true
+  Include:
+    - db/migrate/*.rb
+
+Rails/Output:
+  Enabled: true
+  Include:
+    - app/**/*.rb
+    - config/**/*.rb
+    - db/**/*.rb
+    - lib/**/*.rb
+
+Rails/OutputSafety:
+  Enabled: true
+
+Rails/PluralizationGrammar:
+  Enabled: true
+
+Rails/Presence:
+  Enabled: true
+
+Rails/Present:
+  Enabled: true
+  NotNilAndNotEmpty: true
+  NotBlank: true
+  UnlessBlank: true
+
+Rails/ReadWriteAttribute:
+  Enabled: true
+  Include:
+    - app/models/**/*.rb
+
+Rails/RedundantReceiverInWithOptions:
+  Enabled: true
+
+Rails/RefuteMethods:
+  Enabled: true
+  Include:
+    - '**/test/**/*'
+
+Rails/RelativeDateConstant:
+  Enabled: true
+  AutoCorrect: false
+
+Rails/RequestReferer:
+  Enabled: true
+  EnforcedStyle: referer
+
+Rails/ReversibleMigration:
+  Enabled: true
+  Include:
+    - db/migrate/*.rb
+
+Rails/SafeNavigation:
+  Enabled: true
+  ConvertTry: false
+
+Rails/ScopeArgs:
+  Enabled: true
+  Include:
+    - app/models/**/*.rb
+
+Rails/TimeZone:
+  Enabled: true
+  EnforcedStyle: flexible
+
+Rails/UniqBeforePluck:
+  Enabled: true
+  EnforcedStyle: conservative
+  AutoCorrect: false
+
+Rails/Validation:
+  Enabled: true
+  Include:
+    - app/models/**/*.rb

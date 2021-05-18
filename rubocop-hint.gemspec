@@ -1,10 +1,6 @@
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'hint/rubocop_style/version'
-
 Gem::Specification.new do |spec|
   spec.name                  = 'rubocop-hint'
-  spec.version               = Hint::RubocopStyle::VERSION
+  spec.version               = "0.4.0"
   spec.required_ruby_version = '>= 2.3.0'
   spec.authors               = ['Hint']
   spec.email                 = ['tech@hint.io']
@@ -25,14 +21,12 @@ Gem::Specification.new do |spec|
   spec.files = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
   end
-  spec.bindir = 'exe'
-  spec.executables   = spec.files.grep(%r( ^exe/ )) { |f| File.basename(f) }
-  spec.require_paths = ['lib']
 
-  spec.add_dependency 'rubocop', '>= 0.78.0'
-  spec.add_dependency 'rubocop-rspec', '>= 1.33.0'
-  spec.add_dependency 'rubocop-rails', '>= 2.0.0'
-  spec.add_dependency 'rubocop-performance', '>= 1.3.0'
-  spec.add_development_dependency 'bundler', '~> 1.15'
+  spec.add_dependency 'rubocop', '>= 1.14.0'
+  spec.add_dependency 'rubocop-rspec', '>= 2.3.0'
+  spec.add_dependency 'rubocop-rails', '>= 2.10.0'
+  spec.add_dependency 'rubocop-performance', '>= 1.11.0'
+  spec.add_dependency 'standard', '>= 1.1.0'
+  spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'rake'
 end
