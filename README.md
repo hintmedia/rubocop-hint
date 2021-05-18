@@ -11,7 +11,7 @@ group :development, :test do
   gem 'rubocop-hint'
 end
 ```
-_This gem includes Rubocop, RubocopRspec, RubocopRails, and RubocopPerformance as dependencies._
+_This gem includes Rubocop, RubocopRspec, RubocopRails, RubocopPerformance, and Standard as dependencies._
 
 And then execute:
 
