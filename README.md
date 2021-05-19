@@ -38,7 +38,6 @@ AllCops:
     - 'bin/**/*'
     - 'config/**/*'
     - 'db/**/*'
-    - 'Gemfile*'
     - 'script/**/*'
     - 'test/**/*'
     - 'vendor/**/*'
