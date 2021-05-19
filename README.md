@@ -1,4 +1,4 @@
-# Rubocop Hint Styles
+# Hint Ruby/Rails/RSpec Style
 
 Shared Hint Rubocop style config
 
@@ -52,7 +52,7 @@ Rubocop's inheritance trail is:
 
 ## Contributing
 
-Pull requests are welcome on GitHub at https://github.com/hintmedia/hint-rubocop_style.
+Pull requests are welcome on GitHub at https://github.com/hintmedia/rubocop-hint.
 
 
 ## License
